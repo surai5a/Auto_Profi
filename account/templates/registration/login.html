@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Автопрофи - Логин{% endblock %}
+{% block content %}
+    {% if form.errors %}
+            <p>Логин и пароль не совпадают. Попробуйте снова.</p>
+    {% else %}
+            <p>Используйте следующую форму для входа:</p>
+    {% endif %}
+    <form action="{% url 'login' %}" class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+        <span class="fs-4">АвтоПрофи<span class="fs-6"> База</span></span>
+        <hr class="my-4">
+        <div class="form-floating mb-3">
+            <input name="username" type="login" class="form-control" id="floatingInput" placeholder="login" required>
+            <label for="floatingInput">Логин</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input name="password" type="password" class="form-control"
+                   id="floatingPassword" placeholder="Password" required>
+            <label for="floatingPassword">Пароль</label>
+        </div>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <button class="w-100 btn btn-lg btn-primary" type="submit" value="Log-in">Войти</button>
+    </form>
+{% endblock %}
