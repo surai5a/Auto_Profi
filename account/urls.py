@@ -14,5 +14,12 @@ urlpatterns = [
     # url-ы для изменения пароля
     path('password-change/', views_auth.PasswordChangeView.as_view(), name='password_change'),
     path('password-change/done', views_auth.PasswordChangeDoneView.as_view(), name='password_change_done'),
+
+    #url-ы для сброса пароля
+    path('password-reset/', views_auth.PasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/done/', views_auth.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('password-reset/<uidb64>/<token>/', views_auth.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('password-reset/complete/', views_auth.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+
     path('', views.dashboard, name='dashboard')
 ]

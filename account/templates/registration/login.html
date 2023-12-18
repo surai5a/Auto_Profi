@@ -29,6 +29,7 @@
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}" />
             <button class="w-100 btn btn-lg btn-primary" type="submit" value="Log-in">Войти</button>
+                <div class="text-secondary text-center mt-3"><a href="{% url "password_reset" %}">Забыль пароль</a></div>
         </form>
     </div>
     <div style="height: 200px"></div>

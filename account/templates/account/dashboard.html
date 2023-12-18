@@ -96,13 +96,10 @@
                             </div>
                             -->
                             <hr>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <a class="btn btn-primary" target="__blank" href="/">Редактировать</a>
-                                </div>
-                                <div class="col-sm-12">
-                                    <a class="btn btn-primary" target="__blank" href="/">Изменить пароль</a>
-                                </div>
+                            <div class="d-grid gap-2">
+                                <a class="btn btn-primary" target="__blank" href="/">Редактировать</a>
+                                <a class="btn btn-outline-secondary"
+                                   href="{% url 'password_change' %}">Изменить пароль</a>
                             </div>
                         </div>
                     </div>
