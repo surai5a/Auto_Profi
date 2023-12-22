@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}АвтоПрофи - добро пожаловать!{% endblock %}
+{% block content %}
+    <div id="main" class="px-4 py-5 my-5 text-center">
+        <div style="height: 250px"></div>
+        <h1 class="display-5 fw-bold text-body-emphasis">Аккаунт успешно создан!</h1>
+        <div class="d-flex gap-2 d-sm-flex justify-content-sm-center align-items-center" style="display: inline">
+            Теперь  вы можете
+            <button type="button" class="btn btn-outline-primary btn-lg px-4"
+                    onclick="window.location.href = '{% url 'login' %}';">
+                Войти
+            </button>
+        </div>
+    </div>
+{% endblock %}

@@ -12,7 +12,7 @@
         <div class="container" style="position: sticky; top: 0; background-color: #ffff;">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
                 <a href="#main" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                    <span class="fs-4">АвтоПрофи<span class="fs-6"> Личный кабинет</span></span>
+                    <span onclick="window.location.href='/account'" class="fs-4">АвтоПрофи<span class="fs-6"> Личный кабинет</span></span>
                 </a>
                 <ul id="nav-nav-pills" class="nav nav-pills">
                     <div class="dropdown">
@@ -31,18 +31,12 @@
       </div>
     {% else %}
         <div class="container" style="position: sticky; top: 0; background-color: #ffff;">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-          <a href="#main" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <span class="fs-4">АвтоПрофи</span>
-          </a>
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="#main" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <span onclick="window.location.href='/account'" class="fs-4">АвтоПрофи<span class="fs-6"> Личный кабинет</span></span>
+                </a>
           <ul id="nav-nav-pills" class="nav nav-pills">
-            <li class="nav-item"><a href="/client" class="nav-link" aria-current="page">Главная</a></li>
-            <li class="nav-item"><a href="#services" class="nav-link">Услуги</a></li>
-            <li class="nav-item"><a href="#request" class="nav-link">Оставить заявку</a></li>
-            <li class="nav-item"></li>
-            <li class="nav-item"><a href="#" class="nav-link">О Нас</a></li>
-            <li {% if request.get_full_path == "/account/login/" %}class="nav-link active" {% else %}
-                class="nav-item"> {% endif %} <a href="{% url "login" %}" class="nav-link">Войти</a></li>
+            <button class="w-100 btn btn-outline-secondary" onclick="window.location.href='/client'">На главную</button>
           </ul>
         </header>
       </div>

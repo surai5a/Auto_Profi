@@ -10,7 +10,7 @@
             <div style="height: 20px"></div>
         {% endif %}
         <form action="{% url 'login' %}" class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
-            <span class="fs-4">Вход в аккаунт</span>
+            <h1>Вход в аккаунт</h1>
             <hr class="my-4">
             <div class="form-floating mb-3">
                 <input name="username" type="login" class="form-control" id="floatingInput" placeholder="login" required>
@@ -23,8 +23,16 @@
             </div>
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}" />
-            <button class="w-100 btn btn-lg btn-primary" type="submit" value="Log-in">Войти</button>
-                <div class="text-secondary text-center mt-3"><a href="{% url "password_reset" %}">Забыль пароль</a></div>
+            <div class="row" style="text-align: center">
+                <div class="col">
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" value="Log-in">Войти</button>
+                </div>
+                <div class="col">
+                    <button class="w-100 btn btn-lg btn-outline-secondary" type="submit"
+                            value="Registration" onclick="window.location.href='{% url 'register' %}'">Создать аккаунт</button>
+                </div>
+            </div>
+            <div class="text-secondary text-center mt-3"><a href="{% url "password_reset" %}">Забыль пароль</a></div>
         </form>
     </div>
     <div style="height: 200px"></div>
