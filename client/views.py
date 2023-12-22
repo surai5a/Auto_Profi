@@ -10,10 +10,6 @@ def index(request):
     return render(request, 'client/index.html')
 
 
-def baza_auth(request):
-    return render(request, 'client/baza-auth.html')
-
-
 def postclient(request):
     if request.method == 'POST':
         bid = Bid()

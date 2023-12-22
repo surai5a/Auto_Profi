@@ -8,11 +8,6 @@
                 <div class="col-sm-9 text-secondary">Логин и пароль не совпадают. Попробуйте снова.</div>
             </div>
             <div style="height: 20px"></div>
-        {% else %}
-            <div class="d-flex flex-column align-items-center text-center">
-                <div class="col-sm-9 text-secondary">Используйте следующую форму для входа:</div>
-            </div>
-            <div style="height: 20px"></div>
         {% endif %}
         <form action="{% url 'login' %}" class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
             <span class="fs-4">Вход в аккаунт</span>
