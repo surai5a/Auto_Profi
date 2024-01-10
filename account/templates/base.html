@@ -15,17 +15,16 @@
                     <span onclick="window.location.href='/account'" class="fs-4">АвтоПрофи<span class="fs-6"> Личный кабинет</span></span>
                 </a>
                 <ul id="nav-nav-pills" class="nav nav-pills">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button"
-                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/static/img/user_icon.png" style="margin-right: 10px" height="20">Вадим
+                    <li style="margin-right: 10px" >
+                        <button class="btn btn-outline-secondary px-5" type="button" onclick="window.location.href='/account/deals'">
+                                Заявки
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item active" href="#" aria-current="true">Профиль</button>
-                            <button class="dropdown-item" type="button">Another action</button>
-                            <button class="dropdown-item" type="button">Something else here</button>
-                        </div>
-                    </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-primary" type="button" onclick="window.location.href='/account'">
+                            <img src="/static/img/user_icon.png" style="margin-right: 10px" height="20">{{ request.user.first_name|default:request.user.username }}
+                        </button>
+                    </li>
                 </ul>
             </header>
       </div>
