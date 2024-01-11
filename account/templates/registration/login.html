@@ -35,10 +35,16 @@
             <div class="text-secondary text-center mt-3"><a href="{% url "password_reset" %}">Забыль пароль</a></div>
             {% load static %}
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-auto">
                     <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
-                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="{% static 'svg/google.svg' %}" />
-                        Login with Google
+                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google - вход" src="{% static 'svg/google.svg' %}" />
+                        Войти с помощью Google
+                    </a>
+                </div>
+                <div class="col-md-auto">
+                    <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="VK - вход" src="{% static 'svg/vk.svg' %}" />
+                        Войти с помощью VK
                     </a>
                 </div>
             </div>
