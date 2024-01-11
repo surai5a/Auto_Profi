@@ -50,6 +50,16 @@
     </span>
     -->
 
+    {% if messages %}
+        <div class="container" style="position: sticky; top: 0; background-color: #ffff;">
+            <div class="alert alert-primary d-flex align-items-center me-md-auto" role="alert">
+                {% for message in messages %}
+                    {{ message|safe }}
+                    <button style='margin-left:auto; margin-right: 0;' type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
     <div id="content">
         {% block content %}
         {% endblock %}

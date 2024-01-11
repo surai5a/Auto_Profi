@@ -33,6 +33,15 @@
                 </div>
             </div>
             <div class="text-secondary text-center mt-3"><a href="{% url "password_reset" %}">Забыль пароль</a></div>
+            {% load static %}
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="{% static 'svg/google.svg' %}" />
+                        Login with Google
+                    </a>
+                </div>
+            </div>
         </form>
     </div>
     <div style="height: 200px"></div>

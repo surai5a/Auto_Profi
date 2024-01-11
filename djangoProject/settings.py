@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-qmfw!#c)n(tc%m%4y)o(0s6@iokboj*1tu9fy5_c7s*ax#kydq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['autoprofi.ru', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -149,10 +151,16 @@ LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
 
+STATIC_URL = "static/"
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'account.authentication.EmailAuthBackend'
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.google.GoogleOAuth2'
 ]
+
+SOCIAL_AUTH_GOOGLE_OAUTH_KEY = '517493288407-fdt5ff7akdjatvh7fffmdt84mekvon02.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH_SECRET = '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'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'

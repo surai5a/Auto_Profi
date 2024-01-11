@@ -6,6 +6,7 @@ from .forms import LoginForm, UserRegistrationForm, \
 from django.contrib.auth.decorators import login_required
 from .models import Profile
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 @login_required
@@ -21,6 +22,9 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+            messages.success(request, 'Профиль успешно обновлен :)')
+        else:
+            messages.error(request, 'Что-то пошло не так :( ')
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(

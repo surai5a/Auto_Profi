@@ -22,9 +22,10 @@
                     <label for="id_email">Почта</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input name="date_of_birth" value="{{ request.user.profile.date_of_birth }}" type="text" class="form-control"
-                           id="id_date_of_birth" placeholder="date">
-                    <label for="id_date_of_birth">Дата рождения</label>
+                    <input name="date_of_birth" value="{% if request.user.profile.date_of_birth != None %}
+                    {{ request.user.profile.date_of_birth }}{% else %} {% endif %}" type="text" class="form-control"
+                           id="id_date" placeholder="date">
+                    <label for="id_date">Дата рождения</label>
                 </div>
                 <div class="mb-3">
                     <label for="id_photo">Ваше фото:</label>
